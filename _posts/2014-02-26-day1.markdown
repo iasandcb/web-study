@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Day 1"
+date:   2014-02-26 23:55:51
+categories: study
+---
+
+# 깃헙 소개
+
+[깃헙][github]에 가입한다.
+
+# 깃헙 페이지
+
+[깃헙 페이지][gh-pages]에서 User or Organization site -> GitHub for Mac 
+을 선택하여 각자 개인 페이지를 만든다.
+
+[github]: https://github.com/
+[gh-pages]: http://pages.github.com/
