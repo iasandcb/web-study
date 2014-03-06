@@ -9,7 +9,9 @@ categories: study
 
 16x16 픽셀 이미지를 가리킨다. 32x32는 레티나 디스플레이용이다.
 
-http://faviconer.com/
+[faviconer][faviconer]를 사용하면 한 ico 파일에 두 가지(16, 32) 이미지를 넣을 수 있다.
+
+파비콘을 넣으려면 <head>안에 다음과 같이 넣는다.
 
 <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
@@ -20,22 +22,25 @@ http://faviconer.com/
 3. 114×114: 레티나 아이폰
 4. 144×144: 레티나 아이패드
 
+터치 아이콘을 넣으려면 <head>안에 다음과 같이 넣는다.
+
 <link rel="apple-touch-icon-precomposed" href="icon.png">
 
 ## 부트스트랩 소개
 
-front-end framework: HTML + CSS + JavaScript
-CSS를 미리 작성해놓은 것: 템플릿
+front-end framework: CSS를 미리 작성해놓은 것, 템플릿
 
- * Web Publisher: HTML + CSS
- * Front-end Developer: JavaScript
+[부트스트랩 사이트][bootstrap]
 
-http://getbootstrap.com/
+### CSS 탭의 도입 요약
 
-viewport: 화면 설정
+viewport: 화면 설정으로, 모바일을 우선으로 한다.
 
-.container: container 클래스(타입, 종류)
+.container: container 클래스(타입, 종류)로, 부트스트랩을 적용하게 한다.
 
 ## 예습
 
-http://getbootstrap.com/css/ 에서 grid를 보세요.
+[부트스트랩 사이트][bootstrap]의 CSS 탭에서 grid를 보세요.
+
+[faviconer]: http://faviconer.com/
+[bootstrap]: http://getbootstrap.com/
