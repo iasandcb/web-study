@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "Day 2"
+date:   2014-03-05 20:55:51
+categories: study
+---
+
+## 파비콘
+
+16x16 픽셀 이미지를 가리킨다. 32x32는 레티나 디스플레이용이다.
+
+http://faviconer.com/
+
+<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+## 터치 아이콘
+
+1. 57×57: 예전 아이폰
+2. 72×72: 예전 아이패드
+3. 114×114: 레티나 아이폰
+4. 144×144: 레티나 아이패드
+
+<link rel="apple-touch-icon-precomposed" href="icon.png">
+
+## 부트스트랩 소개
+
+front-end framework: HTML + CSS + JavaScript
+CSS를 미리 작성해놓은 것: 템플릿
+
+ * Web Publisher: HTML + CSS
+ * Front-end Developer: JavaScript
+
+http://getbootstrap.com/
+
+viewport: 화면 설정
+
+.container: container 클래스(타입, 종류)
+
+## 예습
+
+http://getbootstrap.com/css/ 에서 grid를 보세요.
