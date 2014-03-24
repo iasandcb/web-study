@@ -1,0 +1,58 @@
+---
+layout: post
+title:  "Day 4"
+date:   2014-03-24 20:55:51
+categories: study
+---
+## 복습
+
+창수공이 없는 동안 했던 것들을 돌아보며 앞으로 할 것들을 소개한다.
+
+## 지인공 문제
+
+http://imageteller.github.io/Test/WEB/index.html
+이 원하는 대로 나오지 않는 문제가 있었다. 소스를 보면
+
+    style="background-color: #F9CC7F" height: "100px"
+
+를
+
+    style="background-color: #F9CC7F; height: 100px"
+
+와 같이 수정해야 한다. 즉 style 속성의 값으로 여러 개의 CSS 설정을 해야 한다면,
+
+    이름: 값;
+
+와 같이 ;으로 구분해야 한다.
+
+### 그동안 사용한 것들
+
+ * 서비스: github.com
+ * 앱:
+  * Github for Mac: 깃헙 클라이언트
+  * Sublime Text: 텍스트 에디터
+ * 프레임웍
+  * Bootstrap: 프론트엔드 프레임웍
+  * UPPERSITE: UPPERCASE 기반 웹 사이트 개발 프레임웍
+ * 플랫폼
+  * Node.js:
+
+## 앞으로
+
+### 모막 2014
+
+기존에 Process.js를 통해 Canvas를 써서 실제 화면 변경 유무와 상관 없이
+무조건 주기적으로 화면을 갱신하는 방식에서 벗어나, DOM을 직접 다루어
+화면 변경이 있는 부분만 갱신하는 방식으로 한다.
+
+### AngularJS
+
+http://angularjs.org/
+
+동적인 웹 화면을 만드는 데에 탁월한 프레임웍이다.
+
+### CoffeeScript
+
+http://coffeescript.org/
+
+자바스크립트를 기반으로 더욱 간결한 코드 작성을 하게 해준다.
