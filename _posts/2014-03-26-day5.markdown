@@ -1,0 +1,176 @@
+---
+layout: post
+title:  "Day 5"
+date:   2014-03-26 20:55:51
+categories: study
+---
+## COFFEESITE
+
+이제부터 본격적으로 동적인 사이트를 만드는 기법을 배워본다.
+
+## 준비
+
+기본은
+
+https://github.com/nolgong/momak-2014/blob/master/README.md
+
+를 참고한다. (데이터 채우기만 빼고)
+
+추가로, 몽고디비 관리용으로
+
+http://robomongo.org/
+
+를 쓴다.
+
+## 방명록 예제
+
+https://slack-files.com/T025GEX4V-F0275KEAZ-345baf
+
+에 완성본이 있다. 그래도 순서대로 해보자. 먼저 프로젝트 폴더를 잡는다.
+
+### 부트
+
+프로젝트 디렉토리 밑으로 Hello라는 폴더를 만든다. 여기에 실제 코드들이 들어간다.
+프로젝트 디렉토리 밑으로 Hello.litcoffee 파일을 만든다.
+
+이 파일의 내용은 다음과 같다.
+
+    require "./COFFEESITE/BOOT.coffee"
+
+    BOOT
+        CONFIG:
+            defaultBoxName: "Hello"
+            isDevMode: true
+            isMobileFullScreen: true
+
+        SERVER_CONFIG:
+            isNotUsingDB: false
+            isNotRequiringDBAuth: true
+            dbName: 'test'
+
+
+```nodemon Hello.litcoffee``` 로 실행을 해도 당장은 볼 것이 없다.
+
+### WEB
+
+Hello 폴더 밀에 WEB 폴더를 만들고 여기에 index.html을 다음과 같이 만든다.
+
+    <!DOCTYPE html>
+    <html ng-app="helloApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Hello</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+    </head>
+    <body ng-controller="HomeCtrl">
+        <div class="container">
+            <div>
+            <form>
+                <input type="text" ng-model="comment">
+                <button ng-click="clickButton()">click</button>
+            </form>
+            {{state}}
+            </div>
+            <div>
+                <h1>Comments</h1>
+                <ul>
+                    <li ng-repeat="comment in comments">{{comment.content}}</li>
+                </ul>
+            </div>
+        </div>
+    		<script src="http://code.jquery.com/jquery-2.1.0.js"></script>
+    		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-route.min.js"></script>
+    		<script src="/__SCRIPT"></script>
+    		<!-- Latest compiled and minified CSS -->
+    		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+    		<!-- Latest compiled and minified JavaScript -->
+    		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    </body>
+    </html>
+
+AngularJS와 부트스트랩을 쓰게 했다. 이제부터 앵귤러의 컨트롤러는 커피로 작성할 것이다.
+
+### COMMON
+
+Hello 폴더 밑으로 COMMON 이라는 폴더를 만들고 CommentModel.litcoffee를 다음과 같이 작성한다.
+
+    Hello.CommentModel = CLASS(
+
+        preset : ->
+            Hello.MODEL
+
+        params : (cls) ->
+            validDataSet =
+               content :
+                    notEmpty : true
+                    size :
+                         min : 1
+                         max : 255
+
+
+            name : 'Comment'
+            config :
+                    create :
+                         valid : VALID(validDataSet)
+
+                    update :
+                         valid : VALID(validDataSet)
+
+    )
+
+원래는 위의 validDataSet과 config 항목이 없어도 되어야 하는데 현재 어파사이트에 문제가 있다.
+
+### SERVER
+
+Hello 폴더 밑으로 SERVER 라는 폴더를 만들고 MAIN.litcoffee를 다음과 같이 작성한다.
+
+    Hello.MAIN = METHOD(
+        run: (m, params) ->
+            commentModel = Hello.CommentModel()
+            return
+    )
+
+### 잠시 정리
+
+여기까지 해도 뭔가 볼 수 있는 것은 없다. 그래도 매우 중요하다. 이렇게 해야 눈이 볼 수 있는 것을
+만들 수 있기 때문이다.
+
+### BROWSER
+
+Hello 폴더 밑으로 BROWSER 라는 폴더를 만들고 MAIN.litcoffee를 다음과 같이 작성한다.
+
+    helloApp = angular.module("helloApp", ['ngRoute'])
+
+    helloApp.controller "HomeCtrl", ($scope) ->
+        $scope.state = 'Welcome'
+        $scope.clickButton = ->
+            commentModel = Hello.CommentModel()
+            await commentModel.create
+                content: $scope.comment
+                , defer result
+
+            if result.hasError is true
+                alert 'invalid comment'
+
+            commentModel.findDataSet {}, (result) ->
+                if result.hasError is false
+                    $scope.comments = result.savedDataSet
+                    $scope.$apply()
+                return
+
+            $scope.comment = ''
+            $scope.state = 'Posted'
+            return
+
+        return
+
+### 실행
+
+이제 http://localhost:8889 를 열면 그럴 듯한 페이지가 나온다. 텍스트 필드에 입력도 해본다.
+
+### 미션
+
+각자 해야할 프로젝트에 이걸 쓰기 시작한다.
