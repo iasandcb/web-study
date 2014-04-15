@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "Day 6"
+date:   2014-04-15 12:01:51
+categories: study
+---
+## Vision
+
+아주 복잡한 로직을 작성하기는 힘들다.
+그런 거는 창수공한테 맡기고...
+
+모두가 동적인 웹 UI는 작성할 수 있다.
+
+소현공이 먼저 가교 역할을 할단(르네상스형 개발자)
+
+언어는 브라우저에서 실행할 수 있는 언어인 JavaScript의 변형인 CoffeeScript를 쓴다.
+
+## 앞으로 집중할 것들
+
+ * 부트스트랩 그리드 시스템
+ * 커피스크립트 입문 http://www.w3schools.com/js/default.asp
+
+## 준비사항
+
+기존의 github.io에서 놀공 플레이그라운드로 옮긴다.
