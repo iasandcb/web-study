@@ -13,6 +13,7 @@ https://github.com/adambutler/atom-prettify
 스킴: 인터넷 주소의 종류.
 
  예)
+
  * http:
  * https:
  * ftp:
@@ -42,5 +43,6 @@ xs-visible 등의 클래스를 써서 디바이스 종류에 따라 화면에 �
 CSS 클래스나 ID이름은 영어소문자와 하이픈으로 구성한다. HTML, CSS, JS, 이미지 파일, 폴더도 마찬가지다.
 
  예)
+ 
  * Navi_Control.png -> navi-control.png
  * test_folder -> test-folder
