@@ -1,0 +1,46 @@
+---
+layout: post
+title:  "Day 7"
+date:   2014-04-26 09:34:51
+categories: study
+---
+## Bootstrap Grid System
+
+### HTML 다듬기
+
+https://github.com/adambutler/atom-prettify
+
+스킴: 인터넷 주소의 종류.
+
+ 예)
+ * http:
+ * https:
+ * ftp:
+ * mailto:
+ * tel:
+ * sms:
+
+### 기본 복습
+
+12칸 그리드
+
+### 멀티 디바이스 지원
+
+xs와 md를 섞어 쓴다.
+
+### Clear fix
+
+어떤 div의 높이가 커지는 경우, 부모 div가 자식의 변한 높이를 인식하지 못해 그 div의 옆에
+있는 div의 배치가 깨지는 문제가 생긴다. 이 문제를 해결하기 위해 clearfix 클래스를 쓴다.
+
+### Responsive
+
+xs-visible 등의 클래스를 써서 디바이스 종류에 따라 화면에 표시를 조절한다.
+
+### 명명법
+
+CSS 클래스나 ID이름은 영어소문자와 하이픈으로 구성한다. HTML, CSS, JS, 이미지 파일, 폴더도 마찬가지다.
+
+ 예)
+ * Navi_Control.png -> navi-control.png
+ * test_folder -> test-folder
